@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <!-- Corregir la ruta del archivo CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="cuadro rosa-grande">
+        <form method="POST" class="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" required>
+
+            <label for="edad">Edad:</label>
+            <input type="number" name="edad" id="edad" required>
+
+            <label for="cantidad">Cantidad de tarros:</label>
+            <input type="number" name="cantidad" id="cantidad" required>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        {% if calculado %}
+            <div class="resultado">
+                <p>Nombre: {{ nombre }}</p>
+                <p>Total sin descuento: ${{ total_sin_descuento }}</p>
+                <p>Total con descuento: ${{ total_descuento }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
